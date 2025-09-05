@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Pooripadhai</title>
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/css/output.css">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-montserrat bg-white text-gray-900 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-80 bg-white shadow-2xl lg:block">
+    <%- include("partials/sidebar") %>
+  </aside>
+
+  <!-- Right Side Content -->
+  <div class="flex-1 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header>
+      <%- include("partials/header") %>
+    </header>
+
+    <!-- Page Content -->
+    <main class="flex-1">
+      <%- body %>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <%- include("partials/footer") %>
+    </footer>
+  </div>
+
+</body>
+</html>

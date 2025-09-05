@@ -1,0 +1,78 @@
+const express = require('express');
+const path = require('path');
+const expressLayouts = require('express-ejs-layouts');
+
+const app = express();
+const PORT = 3000;
+
+// EJS setup
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(expressLayouts);
+app.set('layout', 'layout'); // default layout (views/layout.ejs)
+
+// Static files
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.get('/', (req, res) => res.render('index', { title: 'Home' }));
+app.get('/courses', (req, res) => res.render('courses', { title: 'Courses' }));
+app.get('/online-tools', (req, res) => res.render('online-tools', { title: 'Online Tools' }));
+app.get('/contest', (req, res) => res.render('contest', { title: 'Contest' }));
+app.get('/blog', (req, res) => res.render('blog', { title: 'Blog' }));
+
+app.get('/about', (req, res) => res.render('about', { title: 'About' }));
+app.get('/contact', (req, res) => res.render('contact', { title: 'Contact' }));
+app.get('/products', (req, res) => res.render('products', { title: 'Products' }));
+app.get('/review', (req, res) => res.render('review', { title: 'Review' }));
+
+// **New Routes**
+app.get('/privacy', (req, res) => res.render('privacy', { title: 'Privacy Policy' }));
+app.get('/terms', (req, res) => res.render('terms', { title: 'Terms & Conditions' }));
+
+// Question Paper Page
+app.get('/question-paper', (req, res) => {
+  res.render('question-paper', { title: 'Question Papers' });
+});
+app.get("/computer-science", (req, res) => {
+  res.render("computer-science", { title: "Computer Science Courses" });
+});
+
+app.get("/html-tutorial", (req, res) => {
+  res.render("html-tutorial", {
+    title: "HTML Tutorial",
+    layout: "layout-sidebar" // ✅ new layout
+  });
+});
+
+app.get('/online-test', (req, res) => {
+  res.render('online-test', { title: 'Online Test' });
+});
+
+
+// PHP Basics Online Test Page
+app.get('/online-test/php-basics', (req, res) => {
+  res.render('php-basics-test', { title: 'PHP Basics Online Test' });
+});
+
+// Compiler Page
+app.get('/compiler', (req, res) => {
+  res.render('compiler', { title: 'HTML, CSS, JS Compiler' });
+});
+
+// Quiz Page
+app.get('/quiz', (req, res) => {
+  res.render('quiz', { title: 'Daily Current Affairs Quiz' });
+});
+
+app.get('/contest/dom-cruiser', (req, res) => {
+  res.render('dom-cruiser', { title: 'DOM Cruiser Contest' });
+});
+
+
+// 👉 Product Details page (Static for now)
+app.get('/product-details', (req, res) => res.render('product-details', { title: 'Product Details' }));
+
+// Start server
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));

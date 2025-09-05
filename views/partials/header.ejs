@@ -1,0 +1,663 @@
+<!-- ================= Header Section ================= -->
+<header
+  class="header-wrapper w-full fixed top-0 left-0 bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-sm z-50 transition-all duration-300 ease-in-out">
+
+  <!-- Menu overlay for mobile -->
+  <div
+    class="menu-overlay fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40 lg:hidden transition-opacity duration-300">
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-between h-16 lg:h-20 relative">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <div
+          class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
+          <img src="/assets/img/logo.png" alt="Logo" class="w-full h-full object-contain rounded-xl" />
+        </div>
+      </a>
+
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center space-x-1">
+        <ul class="flex items-center space-x-1 font-inter font-medium text-[15px] text-gray-700">
+          <li>
+            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+              href="/">
+              Home
+              <div
+                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+              href="/courses">
+              Courses
+              <div
+                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+              href="/online-tools">
+              Online Tools
+              <div
+                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+              </div>
+            </a>
+          </li>
+          <li class="relative group">
+            <a
+              class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 cursor-pointer">
+              Online Test
+              <svg class="w-4 h-4 ml-2 transform group-hover:rotate-180 transition-transform duration-200" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+
+            <!-- Mega Menu Dropdown -->
+            <div class="absolute left-1/2 top-full mt-2 w-screen max-w-6xl 
+           bg-white rounded-2xl shadow-2xl border border-gray-100 
+           opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+           transform -translate-x-1/2 translate-y-4 group-hover:translate-y-0 
+           transition-all duration-300 z-50">
+              <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                  <!-- Previous Year Question Papers - Column 1 -->
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b-2 border-primary-500 font-inter">
+                      Previous Year Question Papers</h3>
+                    <div class="space-y-2">
+                      <a href="/compiler"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">COMPILER</a>
+                      <a href="/online-test"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">PHP</a>
+                      <a href="/quiz"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">QUIZ</a>
+                      <a href="/question-paper"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">Question
+                        Paper</a>
+                      <a href="/previous-papers/aktu-bpharm"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Pharm</a>
+                      <a href="/previous-papers/aktu-mba"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        MBA</a>
+                      <a href="/previous-papers/aktu-mca"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        MCA</a>
+                      <a href="/previous-papers/aktu-mam"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        MAM</a>
+                      <a href="/previous-papers/aktu-bfad"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        BFAD</a>
+                      <a href="/previous-papers/aktu-bhmct"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        BHMCT</a>
+                    </div>
+                  </div>
+
+                  <!-- Previous Year Question Papers - Column 2 -->
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b-2 border-primary-500 font-inter">
+                      Engineering Papers</h3>
+                    <div class="space-y-2">
+                      <a href="/previous-papers/aktu-btech-1st-year"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-1st Year</a>
+                      <a href="/previous-papers/aktu-btech-ce"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-CE</a>
+                      <a href="/previous-papers/aktu-btech-cs"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-CS</a>
+                      <a href="/previous-papers/aktu-btech-ch"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-CH</a>
+                      <a href="/previous-papers/aktu-btech-ec"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-EC</a>
+                      <a href="/previous-papers/aktu-btech-ee"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-EE</a>
+                      <a href="/previous-papers/aktu-btech-it"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-IT</a>
+                      <a href="/previous-papers/aktu-btech-me"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">AKTU
+                        B.Tech-ME</a>
+                    </div>
+                  </div>
+
+                  <!-- Board Exam Papers - Column 3 -->
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b-2 border-primary-500 font-inter">Board
+                      Exam Papers</h3>
+                    <div class="space-y-2">
+                      <a href="/previous-papers/cbse-class-10th"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">CBSE
+                        Class 10th</a>
+                      <a href="/previous-papers/cbse-class-12th"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">CBSE
+                        Class 12th</a>
+                      <a href="/previous-papers/icse-class-10th"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">ICSE
+                        Class 10th</a>
+                      <a href="/previous-papers/isc-class-12th"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">ISC
+                        Class 12th</a>
+                      <a href="/previous-papers/up-board-10th"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">UP
+                        Board 10th</a>
+                      <a href="/previous-papers/up-board-12th"
+                        class="block px-3 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 text-sm font-medium">UP
+                        Board 12th</a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="mt-6 p-4 bg-gradient-to-br from-primary-50 to-blue-50 rounded-xl">
+                      <h4 class="font-semibold text-primary-700 text-sm mb-2">Quick Access</h4>
+                      <div class="flex items-center justify-between text-xs text-primary-600">
+                        <span>5000+ Papers</span>
+                        <span>•</span>
+                        <span>Updated Daily</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom CTA Section -->
+                <div class="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 text-sm">Can't find what you're looking for?</h4>
+                    <p class="text-gray-600 text-xs mt-1">Request specific papers and we'll add them within 24 hours</p>
+                  </div>
+                  <a href="/request-papers"
+                    class="px-6 py-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-sm font-semibold rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-200 shadow-md hover:shadow-lg">
+                    Request Papers
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="relative group">
+            <a
+              class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 cursor-pointer">
+              Study Material
+              <svg class="w-4 h-4 ml-2 transform group-hover:rotate-180 transition-transform duration-200" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+
+            <!-- Study Material Mega Menu -->
+            <div class="absolute left-1/2 top-full mt-2 w-screen max-w-5xl 
+           bg-white rounded-2xl shadow-2xl border border-gray-100 
+           opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+           transform -translate-x-1/2 translate-y-4 group-hover:translate-y-0 
+           transition-all duration-300 z-50">
+              <div class="p-8">
+                <div class="grid grid-cols-4 gap-6">
+                  <!-- PDF Notes -->
+                  <div>
+                    <div class="flex items-center mb-4">
+                      <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd"
+                            d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-lg font-bold text-gray-900 font-inter">PDF Notes</h3>
+                    </div>
+                    <div class="space-y-2">
+                      <a href="/study-material/pdf/engineering"
+                        class="block px-3 py-2 text-gray-700 hover:bg-red-50 hover:text-red-700 rounded-lg transition-all duration-200 text-sm font-medium">Engineering
+                        Notes</a>
+                      <a href="/study-material/pdf/medical"
+                        class="block px-3 py-2 text-gray-700 hover:bg-red-50 hover:text-red-700 rounded-lg transition-all duration-200 text-sm font-medium">Medical
+                        Notes</a>
+                      <a href="/study-material/pdf/commerce"
+                        class="block px-3 py-2 text-gray-700 hover:bg-red-50 hover:text-red-700 rounded-lg transition-all duration-200 text-sm font-medium">Commerce
+                        Notes</a>
+                      <a href="/study-material/pdf/arts"
+                        class="block px-3 py-2 text-gray-700 hover:bg-red-50 hover:text-red-700 rounded-lg transition-all duration-200 text-sm font-medium">Arts
+                        Notes</a>
+                      <a href="/study-material/pdf/science"
+                        class="block px-3 py-2 text-gray-700 hover:bg-red-50 hover:text-red-700 rounded-lg transition-all duration-200 text-sm font-medium">Science
+                        Notes</a>
+                    </div>
+                  </div>
+
+                  <!-- Video Lectures -->
+                  <div>
+                    <div class="flex items-center mb-4">
+                      <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-lg font-bold text-gray-900 font-inter">Video Lectures</h3>
+                    </div>
+                    <div class="space-y-2">
+                      <a href="/study-material/videos/live-classes"
+                        class="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 text-sm font-medium">Live
+                        Classes</a>
+                      <a href="/study-material/videos/recorded"
+                        class="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 text-sm font-medium">Recorded
+                        Lectures</a>
+                      <a href="/study-material/videos/tutorials"
+                        class="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 text-sm font-medium">Tutorial
+                        Videos</a>
+                      <a href="/study-material/videos/lab-demos"
+                        class="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 text-sm font-medium">Lab
+                        Demonstrations</a>
+                      <a href="/study-material/videos/exam-prep"
+                        class="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 text-sm font-medium">Exam
+                        Preparation</a>
+                    </div>
+                  </div>
+
+                  <!-- eBooks -->
+                  <div>
+                    <div class="flex items-center mb-4">
+                      <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z">
+                          </path>
+                        </svg>
+                      </div>
+                      <h3 class="text-lg font-bold text-gray-900 font-inter">eBooks</h3>
+                    </div>
+                    <div class="space-y-2">
+                      <a href="/study-material/ebooks/textbooks"
+                        class="block px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-200 text-sm font-medium">Digital
+                        Textbooks</a>
+                      <a href="/study-material/ebooks/reference"
+                        class="block px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-200 text-sm font-medium">Reference
+                        Books</a>
+                      <a href="/study-material/ebooks/guides"
+                        class="block px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-200 text-sm font-medium">Study
+                        Guides</a>
+                      <a href="/study-material/ebooks/workbooks"
+                        class="block px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-200 text-sm font-medium">Practice
+                        Workbooks</a>
+                      <a href="/study-material/ebooks/magazines"
+                        class="block px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-200 text-sm font-medium">Educational
+                        Magazines</a>
+                    </div>
+                  </div>
+
+                  <!-- Additional Resources -->
+                  <div>
+                    <div class="flex items-center mb-4">
+                      <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd"
+                            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm8 0a1 1 0 011-1h6a1 1 0 011 1v2a1 1 0 01-1 1h-6a1 1 0 01-1-1V8zm0 4a1 1 0 011-1h6a1 1 0 011 1v2a1 1 0 01-1 1h-6a1 1 0 01-1-1v-2z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-lg font-bold text-gray-900 font-inter">More Resources</h3>
+                    </div>
+                    <div class="space-y-2">
+                      <a href="/study-material/flashcards"
+                        class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-all duration-200 text-sm font-medium">Digital
+                        Flashcards</a>
+                      <a href="/study-material/mind-maps"
+                        class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-all duration-200 text-sm font-medium">Mind
+                        Maps</a>
+                      <a href="/study-material/cheat-sheets"
+                        class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-all duration-200 text-sm font-medium">Quick
+                        Reference</a>
+                      <a href="/study-material/formulas"
+                        class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-all duration-200 text-sm font-medium">Formula
+                        Sheets</a>
+                      <a href="/study-material/templates"
+                        class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition-all duration-200 text-sm font-medium">Study
+                        Templates</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Feature Section -->
+                <div class="mt-8 pt-6 border-t border-gray-100 grid grid-cols-3 gap-4">
+                  <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                      <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900 text-sm">Quality Assured</h4>
+                      <p class="text-gray-600 text-xs">Expert verified content</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                      <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900 text-sm">Regular Updates</h4>
+                      <p class="text-gray-600 text-xs">New content weekly</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg">
+                    <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                      <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900 text-sm">Free Access</h4>
+                      <p class="text-gray-600 text-xs">No hidden charges</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+              href="/contest">
+              Contest
+              <div
+                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+              href="/blog">
+              Blog
+              <div
+                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- Mobile Menu -->
+      <div
+        class="menu-block fixed lg:hidden top-0 left-0 w-80 h-screen bg-white shadow-2xl z-50 p-6 overflow-y-auto overscroll-contain scroll-smooth transform -translate-x-full transition-transform duration-300 ease-in-out hidden">
+
+
+        <!-- Mobile menu header -->
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-100">
+          <a href="/" class="flex items-center font-inter font-bold text-xl text-gray-900">
+            <!-- Logo Image -->
+            <div class="w-10 h-10 rounded-xl overflow-hidden mr-3 shadow-lg">
+              <img src="/assets/img/logo.png" alt="POORIPADHAI Logo" class="w-full h-full object-cover" />
+            </div>
+            POORIPADHAI
+          </a>
+
+
+          <!-- Close button -->
+          <button
+            class="menu-close w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors duration-200">
+            <span class="material-symbols-outlined text-gray-600">close</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Links -->
+        <ul class="space-y-2 font-inter font-medium text-gray-700">
+          <li>
+            <a class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
+              href="/">
+              <span class="material-symbols-outlined w-6 h-6 mr-3">home</span>
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
+              href="/courses">
+              <span class="material-symbols-outlined w-6 h-6 mr-3">menu_book</span>
+              Courses
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
+              href="/online-tools">
+              <span class="material-symbols-outlined w-6 h-6 mr-3">build</span>
+              Online Tools
+            </a>
+          </li>
+
+          <!-- Mobile Dropdown for Online Test -->
+          <li>
+            <div class="mobile-dropdown">
+              <button
+                class="mobile-dropdown-trigger flex items-center justify-between w-full px-4 py-3 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-200">
+                <div class="flex items-center">
+                  <span class="material-symbols-outlined w-6 h-6 mr-3">edit_note</span>
+                  Online Test
+                </div>
+                <span
+                  class="material-symbols-outlined w-4 h-4 transform transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="mobile-dropdown-content hidden pl-6 pt-2 space-y-1">
+                <a href="/online-test"
+                  class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">PHP</a>
+                <a href="/online-test/maths"
+                  class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">Mathematics</a>
+                <a href="/online-test/science"
+                  class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">Science</a>
+                <a href="/online-test/english"
+                  class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">English</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Mobile Dropdown for Study Material -->
+          <li>
+            <div class="mobile-dropdown">
+              <button
+                class="mobile-dropdown-trigger flex items-center justify-between w-full px-4 py-3 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-200">
+                <div class="flex items-center">
+                  <span class="material-symbols-outlined w-6 h-6 mr-3">menu_book</span>
+                  Study Material
+                </div>
+                <span
+                  class="material-symbols-outlined w-4 h-4 transform transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="mobile-dropdown-content hidden pl-6 pt-2 space-y-1">
+                <a href="/study-material/pdf"
+                  class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">PDF
+                  Notes</a>
+                <a href="/study-material/videos"
+                  class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">Video
+                  Lectures</a>
+                <a href="/study-material/ebooks"
+                  class="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">eBooks</a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
+              href="/contest">
+              <span class="material-symbols-outlined w-6 h-6 mr-3">emoji_events</span>
+              Contest
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center px-4 py-3 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
+              href="/blog">
+              <span class="material-symbols-outlined w-6 h-6 mr-3">create</span>
+              Blog
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <!-- Right Section -->
+      <div class="flex items-center space-x-4">
+        <!-- Desktop CTA Button -->
+
+
+        <!-- Mobile Menu Trigger -->
+        <button aria-label="menu"
+          class="mobile-menu-trigger lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors duration-200">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" class="text-gray-700">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- ================= End Header Section ================= -->
+
+
+<!-- Enhanced Styles and Animations -->
+<!-- <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --primary-50: #eff6ff;
+    --primary-100: #dbeafe;
+    --primary-200: #bfdbfe;
+    --primary-300: #93c5fd;
+    --primary-400: #60a5fa;
+    --primary-500: #3b82f6;
+    --primary-600: #2563eb;
+    --primary-700: #1d4ed8;
+    --primary-800: #1e40af;
+    --primary-900: #1e3a8a;
+  }
+
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Mobile menu transform animations */
+  .menu-block:not(.hidden) {
+    transform: translateX(0);
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar for mobile menu */
+  .menu-block::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .menu-block::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  .menu-block::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+  }
+
+  .menu-block::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+</style> -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu functionality
+    const mobileMenuTrigger = document.querySelector('.mobile-menu-trigger');
+    const menuBlock = document.querySelector('.menu-block');
+    const menuClose = document.querySelector('.menu-close');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    function openMenu() {
+      menuBlock.classList.remove('hidden');
+      menuOverlay.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      setTimeout(() => {
+        menuBlock.style.transform = 'translateX(0)';
+      }, 10);
+    }
+
+    function closeMenu() {
+      menuBlock.style.transform = 'translateX(-100%)';
+      setTimeout(() => {
+        menuBlock.classList.add('hidden');
+        menuOverlay.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }, 300);
+    }
+
+    if (mobileMenuTrigger) mobileMenuTrigger.addEventListener('click', openMenu);
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
+    if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Mobile dropdown functionality (improved)
+    const mobileDropdownTriggers = document.querySelectorAll('.mobile-dropdown-trigger');
+
+    mobileDropdownTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.parentElement.querySelector('.mobile-dropdown-content');
+        const arrow = trigger.querySelector('.material-symbols-outlined, svg');
+
+        if (!content) return;
+
+        // Close other dropdowns first
+        document.querySelectorAll('.mobile-dropdown-content').forEach(drop => {
+          if (drop !== content) drop.classList.add('hidden');
+        });
+        document.querySelectorAll('.mobile-dropdown-trigger .material-symbols-outlined, .mobile-dropdown-trigger svg')
+          .forEach(icon => {
+            if (icon !== arrow) icon.style.transform = 'rotate(0deg)';
+          });
+
+        // Toggle current dropdown
+        content.classList.toggle('hidden');
+        arrow.style.transform = content.classList.contains('hidden')
+          ? 'rotate(0deg)'
+          : 'rotate(180deg)';
+      });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.header-wrapper');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 100) {
+        header.classList.add('bg-white/98', 'shadow-lg');
+        header.classList.remove('bg-white/95');
+      } else {
+        header.classList.add('bg-white/95');
+        header.classList.remove('bg-white/98', 'shadow-lg');
+      }
+    });
+  });
+</script>
