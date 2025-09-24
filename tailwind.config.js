@@ -23,6 +23,15 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif'],
         'open-sans': ['Open Sans', 'sans-serif'],
       },
+      fontSize: {
+        base: "15px",   // Paragraph
+        h1: "48px",     // Heading 1
+        h2: "36px",
+        h3: "28px",
+        h4: "22px",
+        h5: "18px",
+        h6: "16px",
+      },
     },
   },
   plugins: [],

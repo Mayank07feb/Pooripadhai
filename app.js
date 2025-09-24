@@ -24,8 +24,6 @@ app.get('/blog', (req, res) => res.render('blog', { title: 'Blog' }));
 
 app.get('/about', (req, res) => res.render('about', { title: 'About' }));
 app.get('/contact', (req, res) => res.render('contact', { title: 'Contact' }));
-app.get('/products', (req, res) => res.render('products', { title: 'Products' }));
-app.get('/review', (req, res) => res.render('review', { title: 'Review' }));
 
 // **New Routes**
 app.get('/privacy', (req, res) => res.render('privacy', { title: 'Privacy Policy' }));
@@ -42,7 +40,7 @@ app.get("/computer-science", (req, res) => {
 app.get("/html-tutorial", (req, res) => {
   res.render("html-tutorial", {
     title: "HTML Tutorial",
-    layout: "layout-sidebar" // ✅ new layout
+    layout: "layout-sidebar" //sidebar + new layout
   });
 });
 
@@ -70,9 +68,6 @@ app.get('/contest/dom-cruiser', (req, res) => {
   res.render('dom-cruiser', { title: 'DOM Cruiser Contest' });
 });
 
-
-// 👉 Product Details page (Static for now)
-app.get('/product-details', (req, res) => res.render('product-details', { title: 'Product Details' }));
 
 // Start server
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
