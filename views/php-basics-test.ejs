@@ -8,10 +8,15 @@
                 PHP Basics Online Test
             </h1>
             <p class="text-base md:text-h5 text-gray-600">
-                Question <span id="current-question">1</span> of 10
-            </p>
+                Question <span id="current-question">1</span> of <span id="total-questions">0</span>
+            </p 
+            1>
             <div class="mt-2 text-gray-700 font-semibold text-h6">
-                Time Remaining: <span id="timer">10:00</span>
+                Time Remaining: <span id="timer" class="text-red-600 font-bold">10:00</span>
+            </div>
+            <div class="mt-2 text-sm text-gray-500">
+                Score: <span id="current-score" class="font-bold text-blue-600">0</span> / <span
+                    id="total-score">0</span>
             </div>
         </div>
 
@@ -19,47 +24,521 @@
         <div
             class="bg-white rounded-3xl shadow-2xl p-10 md:p-16 mb-8 transform transition-transform duration-500 hover:-translate-y-1">
             <h3 class="text-h3 font-bold text-gray-800 mb-6" id="question-text">
-                What is the correct way to start a PHP script?
+                Loading...
             </h3>
 
             <!-- Options -->
-            <div class="grid gap-4">
-                <button
-                    class="option-btn w-full text-left px-6 py-3 bg-gray-100 hover:bg-primary hover:text-white rounded-xl transition-colors duration-300 text-h5">
-                    &lt;?php
-                </button>
-                <button
-                    class="option-btn w-full text-left px-6 py-3 bg-gray-100 hover:bg-primary hover:text-white rounded-xl transition-colors duration-300 text-h5">
-                    &lt;script&gt;
-                </button>
-                <button
-                    class="option-btn w-full text-left px-6 py-3 bg-gray-100 hover:bg-primary hover:text-white rounded-xl transition-colors duration-300 text-h5">
-                    &lt;php&gt;
-                </button>
-                <button
-                    class="option-btn w-full text-left px-6 py-3 bg-gray-100 hover:bg-primary hover:text-white rounded-xl transition-colors duration-300 text-h5">
-                    &lt;?&gt;
-                </button>
+            <div class="grid gap-4" id="options-container">
+                <!-- Options will be dynamically added here -->
+            </div>
+
+            <!-- Question Info -->
+            <div class="mt-6 flex justify-between items-center text-sm text-gray-500">
+                <span id="question-type">Multiple Choice</span>
+                <span id="difficulty">Difficulty: Easy</span>
             </div>
         </div>
 
         <!-- Navigation -->
         <div class="flex justify-between items-center">
             <button id="prev-btn"
-                class="px-6 py-3 bg-gray-200 text-gray-700 rounded-xl shadow hover:bg-gray-300 transition-colors duration-300 text-h5">
+                class="px-6 py-3 bg-gray-200 text-gray-700 rounded-xl shadow hover:bg-gray-300 transition-colors duration-300 text-h5 disabled:opacity-50"
+                disabled>
                 Previous
             </button>
-            <button id="next-btn"
-                class="px-6 py-3 bg-primary text-white rounded-xl shadow hover:shadow-xl hover:scale-105 transition-all duration-300 text-h5">
-                Next
-            </button>
+            <div class="flex space-x-3">
+                <button id="skip-btn"
+                    class="px-4 py-3 bg-yellow-200 text-yellow-800 rounded-xl shadow hover:bg-yellow-300 transition-colors duration-300 text-h5">
+                    Skip
+                </button>
+                <button id="next-btn"
+                    class="px-6 py-3 bg-primary text-white rounded-xl shadow hover:shadow-xl hover:scale-105 transition-all duration-300 text-h5">
+                    Next
+                </button>
+            </div>
         </div>
 
         <!-- Progress Bar -->
-        <div class="mt-10 h-3 w-full bg-gray-200 rounded-full overflow-hidden">
+        <div class="mt-10 h-4 w-full bg-gray-200 rounded-full overflow-hidden shadow-inner">
             <div id="progress-bar"
-                class="h-full w-10 bg-gradient-to-r from-primary to-cyan-500 transition-all duration-500"></div>
+                class="h-full w-0 bg-gradient-to-r from-primary to-cyan-500 transition-all duration-500 relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-pulse">
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Text -->
+        <div class="mt-2 text-center text-sm text-gray-600">
+            <span id="progress-text">0% Complete</span>
+        </div>
+
+        <!-- Results Container -->
+        <div id="results-container" class="mt-10 hidden bg-white p-8 rounded-3xl shadow-lg">
+            <!-- Results will be shown here -->
         </div>
 
     </div>
 </section>
+
+<style>
+    .text-h1 {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    .text-h3 {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+
+    .text-h5 {
+        font-size: 1.125rem;
+    }
+
+    .text-h6 {
+        font-size: 1rem;
+    }
+
+    .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .bg-primary {
+        background-color: #3B82F6;
+    }
+
+    .text-primary {
+        color: #3B82F6;
+    }
+
+    .hover\:bg-primary:hover {
+        background-color: #2563EB;
+    }
+
+    .option-btn {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .option-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .option-btn.selected {
+        background-color: #3B82F6 !important;
+        color: white !important;
+        border-color: #2563EB;
+        transform: scale(1.02);
+    }
+
+    .timer-warning {
+        animation: pulse 1s infinite;
+        color: #EF4444 !important;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.7;
+        }
+    }
+</style>
+
+<script>
+    const questions = [
+        {
+            question: "What is the correct way to start a PHP script?",
+            options: ["&lt;?php", "&lt;script&gt;", "&lt;php&gt;", "&lt;?"],
+            answer: "&lt;?php",
+            difficulty: "Easy",
+            explanation: "PHP scripts always start with the opening tag &lt;?php"
+        },
+        {
+            question: "Which symbol is used to end a PHP statement?",
+            options: [";", ":", ".", ","],
+            answer: ";",
+            difficulty: "Easy",
+            explanation: "Every PHP statement must end with a semicolon (;)"
+        },
+        {
+            question: "PHP files have a default file extension of?",
+            options: [".php", ".html", ".js", ".txt"],
+            answer: ".php",
+            difficulty: "Easy",
+            explanation: "PHP files use the .php extension"
+        },
+        {
+            question: "Which of the following is the correct way to create a variable in PHP?",
+            options: ["$variable", "variable", "var $variable", "create $variable"],
+            answer: "$variable",
+            difficulty: "Easy",
+            explanation: "PHP variables start with the $ symbol"
+        },
+        {
+            question: "What does PHP stand for?",
+            options: ["Personal Home Page", "PHP: Hypertext Preprocessor", "Private Home Page", "Public Home Page"],
+            answer: "PHP: Hypertext Preprocessor",
+            difficulty: "Medium",
+            explanation: "PHP is a recursive acronym for 'PHP: Hypertext Preprocessor'"
+        },
+        {
+            question: "Which function is used to output text in PHP?",
+            options: ["echo", "print", "both echo and print", "display"],
+            answer: "both echo and print",
+            difficulty: "Medium",
+            explanation: "Both echo and print can be used to output text in PHP"
+        },
+        {
+            question: "How do you write a single-line comment in PHP?",
+            options: ["// comment", "&lt;!-- comment --&gt;", "/* comment */", "# comment"],
+            answer: "// comment",
+            difficulty: "Easy",
+            explanation: "Single-line comments in PHP start with // or #"
+        },
+        {
+            question: "Which of the following is used to include a file in PHP?",
+            options: ["include", "require", "both include and require", "import"],
+            answer: "both include and require",
+            difficulty: "Medium",
+            explanation: "Both include and require can be used to include files in PHP"
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    const totalQuestions = questions.length;
+    const userAnswers = Array(totalQuestions).fill(null);
+    let score = 0;
+    let timeLeft = 10 * 60; // 10 minutes in seconds
+
+    // DOM elements
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const currentQuestion = document.getElementById('current-question');
+    const totalQuestionsElem = document.getElementById('total-questions');
+    const totalScoreElem = document.getElementById('total-score');
+    const currentScoreElem = document.getElementById('current-score');
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const resultsContainer = document.getElementById('results-container');
+    const timerElem = document.getElementById('timer');
+    const difficultyElem = document.getElementById('difficulty');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const skipBtn = document.getElementById('skip-btn');
+
+    // Initialize
+    totalQuestionsElem.textContent = totalQuestions;
+    totalScoreElem.textContent = totalQuestions;
+
+    // Load a question
+    function loadQuestion(index) {
+        const q = questions[index];
+        questionText.textContent = q.question;
+        difficultyElem.textContent = `Difficulty: ${q.difficulty}`;
+        optionsContainer.innerHTML = '';
+
+        q.options.forEach((option, optionIndex) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn w-full text-left px-6 py-4 bg-gray-100 hover:bg-primary hover:text-white rounded-xl transition-all duration-300 text-h5 font-medium';
+            btn.innerHTML = `<span class="font-bold mr-3">${String.fromCharCode(65 + optionIndex)}.</span>${option}`;
+
+            // Highlight previously selected answer
+            if (userAnswers[index] === option) {
+                btn.classList.add('selected');
+            }
+
+            btn.onclick = () => {
+                userAnswers[index] = option;
+                Array.from(optionsContainer.children).forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+
+                // Enable next button if answer is selected
+                nextBtn.disabled = false;
+                nextBtn.classList.remove('opacity-50');
+            };
+
+            optionsContainer.appendChild(btn);
+        });
+
+        // Update UI
+        currentQuestion.textContent = index + 1;
+        const progress = ((index + 1) / totalQuestions) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressText.textContent = `${Math.round(progress)}% Complete`;
+
+        // Update navigation buttons
+        prevBtn.disabled = index === 0;
+        prevBtn.classList.toggle('opacity-50', index === 0);
+
+        // Update next button text
+        if (index === totalQuestions - 1) {
+            nextBtn.textContent = 'Finish Test';
+            nextBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            nextBtn.classList.remove('bg-primary');
+        } else {
+            nextBtn.textContent = 'Next';
+            nextBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+            nextBtn.classList.add('bg-primary');
+        }
+
+        // Disable next if no answer selected (unless it's a skipped question)
+        nextBtn.disabled = !userAnswers[index];
+        nextBtn.classList.toggle('opacity-50', !userAnswers[index]);
+    }
+
+    // Calculate score
+    function calculateScore() {
+        score = 0;
+        questions.forEach((q, i) => {
+            if (userAnswers[i] === q.answer) {
+                score++;
+            }
+        });
+        currentScoreElem.textContent = score;
+    }
+
+    // Show results
+    function showResults() {
+        // Stop timer
+        if (timerInterval) {
+            clearInterval(timerInterval);
+        }
+
+        calculateScore();
+
+        // Hide test elements more specifically
+        const questionCard = document.querySelector('.bg-white.rounded-3xl');
+        const navigationDiv = document.querySelector('.flex.justify-between.items-center');
+        const progressDiv = document.querySelector('#progress-bar').parentElement;
+
+        if (questionCard) questionCard.style.display = 'none';
+        if (navigationDiv) navigationDiv.style.display = 'none';
+        if (progressDiv) progressDiv.style.display = 'none';
+
+        console.log('Showing results...');
+        console.log('Score:', score, 'Total:', totalQuestions);
+
+        const percentage = Math.round((score / totalQuestions) * 100);
+        let grade, gradeColor, message;
+
+        if (percentage >= 90) {
+            grade = 'Excellent!';
+            gradeColor = 'text-green-600';
+            message = 'Outstanding performance! You have excellent PHP knowledge.';
+        } else if (percentage >= 80) {
+            grade = 'Very Good!';
+            gradeColor = 'text-blue-600';
+            message = 'Great job! You have good understanding of PHP basics.';
+        } else if (percentage >= 70) {
+            grade = 'Good';
+            gradeColor = 'text-yellow-600';
+            message = 'Well done! You have decent PHP knowledge with room for improvement.';
+        } else if (percentage >= 60) {
+            grade = 'Average';
+            gradeColor = 'text-orange-600';
+            message = 'You have basic understanding. Consider reviewing PHP fundamentals.';
+        } else {
+            grade = 'Needs Improvement';
+            gradeColor = 'text-red-600';
+            message = 'Keep practicing! Focus on PHP basics to improve your skills.';
+        }
+
+        resultsContainer.style.display = 'block';
+        resultsContainer.classList.remove('hidden');
+        resultsContainer.innerHTML = `
+      <div class="text-center mb-8">
+        <div class="mb-6">
+          <div class="text-4xl mb-4">🎉</div>
+          <h2 class="text-h1 font-bold mb-4 text-gray-800">Test Completed!</h2>
+        </div>
+        
+        <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl p-8 mb-6">
+          <div class="text-7xl font-bold mb-2">${percentage}%</div>
+          <div class="text-3xl font-bold mb-4">${grade}</div>
+          <p class="text-blue-100 text-lg mb-6">${message}</p>
+          
+          <div class="grid grid-cols-2 gap-4 mt-6">
+            <div class="bg-white/20 rounded-xl p-4">
+              <div class="text-2xl font-bold">${score}</div>
+              <div class="text-sm text-blue-100">Correct</div>
+            </div>
+            <div class="bg-white/20 rounded-xl p-4">
+              <div class="text-2xl font-bold">${totalQuestions - score}</div>
+              <div class="text-sm text-blue-100">Wrong</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-green-100 p-4 rounded-xl">
+            <div class="text-2xl font-bold text-green-600">${score}</div>
+            <div class="text-sm text-green-700">Questions Correct</div>
+          </div>
+          <div class="bg-red-100 p-4 rounded-xl">
+            <div class="text-2xl font-bold text-red-600">${userAnswers.filter(a => a !== null && questions.find((q, i) => userAnswers[i] === a && q.answer !== a)).length}</div>
+            <div class="text-sm text-red-700">Questions Wrong</div>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-xl">
+            <div class="text-2xl font-bold text-gray-600">${userAnswers.filter(a => a === null).length}</div>
+            <div class="text-sm text-gray-700">Questions Skipped</div>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="text-h3 font-bold mb-6 text-gray-800 border-b-2 border-gray-200 pb-2">📋 Detailed Analysis:</h3>
+    `;
+
+        questions.forEach((q, i) => {
+            const userAnswer = userAnswers[i];
+            const isCorrect = userAnswer === q.answer;
+            const div = document.createElement('div');
+            div.className = `mb-6 p-6 rounded-xl border-2 ${isCorrect ? 'border-green-200 bg-green-50' : (userAnswer ? 'border-red-200 bg-red-50' : 'border-gray-200 bg-gray-50')}`;
+
+            div.innerHTML = `
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="font-bold text-lg text-gray-800 flex-1">${i + 1}. ${q.question}</h4>
+          <span class="ml-4 px-3 py-1 rounded-full text-sm font-medium ${isCorrect ? 'bg-green-200 text-green-800' : (userAnswer ? 'bg-red-200 text-red-800' : 'bg-gray-200 text-gray-800')}">
+            ${isCorrect ? '✓ Correct' : (userAnswer ? '✗ Wrong' : 'Skipped')}
+          </span>
+        </div>
+        
+        <div class="space-y-2">
+          <p><span class="font-semibold">Your Answer:</span> 
+            <span class="${isCorrect ? 'text-green-600 font-medium' : (userAnswer ? 'text-red-600 font-medium' : 'text-gray-500')}">${userAnswer || 'No Answer'}</span>
+          </p>
+          <p><span class="font-semibold">Correct Answer:</span> 
+            <span class="text-green-600 font-medium">${q.answer}</span>
+          </p>
+          ${q.explanation ? `<p class="text-sm text-gray-600 bg-white p-3 rounded-lg border"><span class="font-semibold">Explanation:</span> ${q.explanation}</p>` : ''}
+        </div>
+      `;
+            resultsContainer.appendChild(div);
+        });
+
+        // Add restart and summary buttons
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'flex flex-col sm:flex-row gap-4 mt-8';
+        buttonContainer.innerHTML = `
+      <button onclick="location.reload()" class="flex-1 px-6 py-4 bg-primary text-white rounded-xl shadow hover:shadow-xl hover:scale-105 transition-all duration-300 text-h5 font-bold">
+        🔄 Take Test Again
+      </button>
+      <button onclick="window.print()" class="flex-1 px-6 py-4 bg-green-600 text-white rounded-xl shadow hover:shadow-xl hover:scale-105 transition-all duration-300 text-h5 font-bold">
+        🖨️ Print Results
+      </button>
+      <button onclick="shareResults()" class="flex-1 px-6 py-4 bg-purple-600 text-white rounded-xl shadow hover:shadow-xl hover:scale-105 transition-all duration-300 text-h5 font-bold">
+        📤 Share Results
+      </button>
+    `;
+        resultsContainer.appendChild(buttonContainer);
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Navigation buttons
+    prevBtn.addEventListener('click', () => {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            loadQuestion(currentQuestionIndex);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentQuestionIndex < totalQuestions - 1) {
+            currentQuestionIndex++;
+            loadQuestion(currentQuestionIndex);
+        } else {
+            // Test finished - show results
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            showResults();
+        }
+    });
+
+    skipBtn.addEventListener('click', () => {
+        userAnswers[currentQuestionIndex] = null; // Mark as skipped
+        if (currentQuestionIndex < totalQuestions - 1) {
+            currentQuestionIndex++;
+            loadQuestion(currentQuestionIndex);
+        } else {
+            // Test finished - show results
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            showResults();
+        }
+    });
+
+    // Timer functionality
+    let timerInterval;
+    function updateTimer() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerElem.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        // Add warning style when time is running out
+        if (timeLeft <= 120) { // 2 minutes
+            timerElem.classList.add('timer-warning');
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert('Time is up! Submitting your answers.');
+            showResults();
+            return;
+        }
+        timeLeft--;
+    }
+
+    timerInterval = setInterval(updateTimer, 1000);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' && !prevBtn.disabled) {
+            prevBtn.click();
+        } else if (e.key === 'ArrowRight' && !nextBtn.disabled) {
+            nextBtn.click();
+        } else if (e.key >= '1' && e.key <= '4') {
+            const optionIndex = parseInt(e.key) - 1;
+            const options = optionsContainer.children;
+            if (options[optionIndex]) {
+                options[optionIndex].click();
+            }
+        }
+    });
+
+    // Share results function
+    function shareResults() {
+        const percentage = Math.round((score / totalQuestions) * 100);
+        let grade;
+        if (percentage >= 90) grade = 'Excellent!';
+        else if (percentage >= 80) grade = 'Very Good!';
+        else if (percentage >= 70) grade = 'Good';
+        else if (percentage >= 60) grade = 'Average';
+        else grade = 'Needs Improvement';
+
+        const text = `🎉 I just completed the PHP Basics Online Test!\n\nMy Score: ${score}/${totalQuestions} (${percentage}%)\nGrade: ${grade}\n\nTest your PHP knowledge too!`;
+
+        if (navigator.share) {
+            navigator.share({
+                title: 'PHP Test Results',
+                text: text
+            });
+        } else {
+            // Fallback - copy to clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Results copied to clipboard! You can share it now.');
+            });
+        }
+    }
+
+    // Load first question
+    loadQuestion(currentQuestionIndex);
+</script>
