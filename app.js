@@ -33,6 +33,11 @@ app.get('/terms', (req, res) => res.render('terms', { title: 'Terms & Conditions
 app.get('/question-paper', (req, res) => {
   res.render('question-paper', { title: 'Question Papers' });
 });
+
+app.get('/previous-year-question-paper', (req, res) => {
+  res.render('previous-year-question-paper', { title: 'Previous Year Question Papers' });
+});
+
 app.get("/computer-science", (req, res) => {
   res.render("computer-science", { title: "Computer Science Courses" });
 });
@@ -48,6 +53,13 @@ app.get('/online-test', (req, res) => {
   res.render('online-test', { title: 'Online Test' });
 });
 
+app.get('/online-test-one', (req, res) => {
+  res.render('online-test-one', { title: 'Online Test One' });
+});
+
+app.get('/online-test-one/subjects/c', (req, res) => {
+  res.render('c-online-test', { title: 'C Language Online Test' });
+});
 
 // PHP Basics Online Test Page
 app.get('/online-test/php-basics', (req, res) => {
