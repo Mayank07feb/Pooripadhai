@@ -17,7 +17,22 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => res.render('index', { title: 'Home' }));
+
 app.get('/courses', (req, res) => res.render('courses', { title: 'Courses' }));
+
+// Computer Courses main page
+app.get('/computer-courses', (req, res) => {
+  res.render('computer-courses', { title: 'Computer Courses' });
+});
+
+// Computer Courses - HTML Tutorial
+app.get('/computer-courses/html-tutorial', (req, res) => {
+  res.render('html-tutorial', {
+    title: 'HTML Tutorial',
+    layout: 'layout-sidebar' // sidebar + new layout
+  });
+});
+
 // Online Tools Page
 app.get('/online-tools', (req, res) => {
   res.render('online-tools', { title: 'Online Tools' });
@@ -53,27 +68,9 @@ app.get('/previous-year-question-paper', (req, res) => {
   res.render('previous-year-question-paper', { title: 'Previous Year Question Papers' });
 });
 
-
 // Previous Year Question Papers - Universities / AKTU / B.Tech
 app.get('/previous-year-question-paper/universities/aktu/b.tech', (req, res) => {
   res.render('question-paper', { title: 'Previous Year Question Papers - AKTU B.Tech' }); // File: views/previous-year-question-paper-aktu-btech.ejs
-});
-
-
-// // Question Paper Page
-// app.get('/question-paper', (req, res) => {
-//   res.render('question-paper', { title: 'Question Papers' });
-// });
-
-app.get("/computer-science", (req, res) => {
-  res.render("computer-science", { title: "Computer Science Courses" });
-});
-
-app.get("/html-tutorial", (req, res) => {
-  res.render("html-tutorial", {
-    title: "HTML Tutorial",
-    layout: "layout-sidebar" //sidebar + new layout
-  });
 });
 
 app.get('/online-test', (req, res) => {
@@ -85,7 +82,7 @@ app.get('/online-test/subjects/c', (req, res) => {
 });
 
 app.get('/online-test/php/basics', (req, res) => {
-  res.render('php-basics', { title: 'PHP Basics' }); 
+  res.render('php-basics', { title: 'PHP Basics' });
 });
 
 // PHP Basics Online Test Page
@@ -96,6 +93,29 @@ app.get('/online-test/php/basics/test', (req, res) => {
 // Daily Current Affairs Quiz Page
 app.get('/daily-quiz/current-affairs', (req, res) => {
   res.render('daily-quiz-current-affairs', { title: 'Daily Current Affairs Quiz' }); // File: views/daily-quiz-current-affairs.ejs
+});
+
+
+// User Authentication Pages
+app.get('/signin', (req, res) => {
+  res.render('users/signin', { title: 'Sign In' });
+});
+
+app.get('/signup', (req, res) => {
+  res.render('users/signup', { title: 'Sign Up' });
+});
+
+app.get('/dashboard', (req, res) => {
+  res.render('users/dashboard', { title: 'Dashboard', layout: false }); // layout: false disables express-ejs-layouts
+});
+
+// User Profile and Settings Pages
+app.get('/profile', (req, res) => {
+  res.render('users/profile', { title: 'Profile' });
+});
+
+app.get('/settings', (req, res) => {
+  res.render('users/settings', { title: 'Settings' });
 });
 
 
