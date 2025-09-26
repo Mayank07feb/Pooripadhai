@@ -1,0 +1,232 @@
+<!--Convert case Hero Section -->
+<section class="relative bg-gray-50 text-gray-900 overflow-hidden pt-8">
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center relative z-10">
+
+        <!-- Main Heading -->
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+            Convert Case
+        </h1>
+
+        <!-- Button -->
+        <a href="#compiler"
+            class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-primary rounded-lg shadow-md hover:bg-indigo-700">
+            Start Coding
+        </a>
+
+    </div>
+</section>
+
+<div class="max-w-4xl mx-auto">
+
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <!-- Write Content Section -->
+        <div class="p-6 border-b border-gray-100">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Write Content</h2>
+            <div class="relative">
+                <textarea id="textInput" placeholder="Type or paste your content here"
+                    class="w-full h-48 p-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none resize-none text-gray-700 text-base leading-relaxed transition-all duration-200"></textarea>
+            </div>
+
+            <!-- Character Count Stats -->
+            <div class="flex gap-6 mt-3 text-sm text-gray-500">
+                <div class="flex items-center gap-1">
+                    <span class="font-medium">Character Count:</span>
+                    <span id="charCount" class="font-bold text-blue-600">0</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="font-medium">Word Count:</span>
+                    <span id="wordCount" class="font-bold text-blue-600">0</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="font-medium">Line Count:</span>
+                    <span id="lineCount" class="font-bold text-blue-600">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Conversion Buttons -->
+        <div class="p-6">
+            <!-- First Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <button onclick="convertCase('sentence')"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                    Sentence case
+                </button>
+                <button onclick="convertCase('lower')"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                    lower case
+                </button>
+                <button onclick="convertCase('upper')"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                    UPPER CASE
+                </button>
+                <button onclick="convertCase('capitalized')"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                    Capitalized Case
+                </button>
+            </div>
+
+            <!-- Second Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                <button onclick="convertCase('alternating')"
+                    class="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                    aLtErNaTiNg cAsE
+                </button>
+                <button onclick="convertCase('title')"
+                    class="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                    Title Case
+                </button>
+                <button onclick="convertCase('inverse')"
+                    class="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200">
+                    InVeRsE CaSe
+                </button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-3">
+                <button onclick="downloadText()"
+                    class="bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
+                    Download Text
+                </button>
+                <button onclick="copyToClipboard()"
+                    class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
+                    Copy to Clipboard
+                </button>
+                <button onclick="clearText()"
+                    class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
+                    Clear
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="mt-8 mb-16 text-center text-gray-600 text-sm max-w-3xl mx-auto">
+        <p class="mb-4">
+            Tired of manually changing titles and paragraphs? The Poori Padhai team provides a
+            <strong>Case Converter</strong> — a magical tool that lets you format your text exactly the way you want.
+        </p>
+        <p>
+            This tool offers multiple options like
+            <strong>Sentence case, Title Case, lower case, UPPER CASE, Capitalized Case, aLtErNaTiNg cAsE, InVeRsE
+                CaSe</strong>,
+            and more. Change your text in seconds and enjoy a smooth, magical experience.
+        </p>
+    </div>
+
+</div>
+
+<script>
+    const textInput = document.getElementById('textInput');
+    const charCount = document.getElementById('charCount');
+    const wordCount = document.getElementById('wordCount');
+    const lineCount = document.getElementById('lineCount');
+
+    // Update counts on input
+    textInput.addEventListener('input', updateCounts);
+
+    function updateCounts() {
+        const text = textInput.value;
+        charCount.textContent = text.length;
+        wordCount.textContent = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+        lineCount.textContent = text === '' ? 0 : text.split('\n').length;
+    }
+
+    function convertCase(type) {
+        const text = textInput.value;
+        if (!text) return;
+
+        let convertedText = '';
+
+        switch (type) {
+            case 'sentence':
+                convertedText = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+                break;
+            case 'lower':
+                convertedText = text.toLowerCase();
+                break;
+            case 'upper':
+                convertedText = text.toUpperCase();
+                break;
+            case 'capitalized':
+                convertedText = text.replace(/\b\w/g, l => l.toUpperCase());
+                break;
+            case 'alternating':
+                convertedText = text.split('').map((char, index) =>
+                    index % 2 === 0 ? char.toLowerCase() : char.toUpperCase()
+                ).join('');
+                break;
+            case 'title':
+                convertedText = text.replace(/\w\S*/g, (txt) =>
+                    txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+                );
+                break;
+            case 'inverse':
+                convertedText = text.split('').map(char =>
+                    char === char.toLowerCase() ? char.toUpperCase() : char.toLowerCase()
+                ).join('');
+                break;
+        }
+
+        textInput.value = convertedText;
+        updateCounts();
+    }
+
+    function copyToClipboard() {
+        textInput.select();
+        textInput.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(textInput.value).then(() => {
+            showNotification('Text copied to clipboard!', 'success');
+        });
+    }
+
+    function downloadText() {
+        const text = textInput.value;
+        if (!text) {
+            showNotification('No text to download!', 'error');
+            return;
+        }
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'converted-text.txt';
+        a.click();
+        window.URL.revokeObjectURL(url);
+        showNotification('Text downloaded successfully!', 'success');
+    }
+
+    function clearText() {
+        textInput.value = '';
+        updateCounts();
+        showNotification('Text cleared!', 'info');
+    }
+
+    function showNotification(message, type) {
+        const notification = document.createElement('div');
+        const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+
+        notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-transform duration-300`;
+        notification.textContent = message;
+        notification.style.transform = 'translateX(100%)';
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+    }
+
+    // Initialize counts
+    updateCounts();
+</script>
