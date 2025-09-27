@@ -1,9 +1,9 @@
 <!-- Hero Section with Background -->
-<section class="relative h-screen w-full overflow-hidden">
+<section class="relative h-screen w-full overflow-hidden mt-16">
   <!-- Background Image -->
   <div class="absolute inset-0">
     <img src="/assets/img/hero-page.jpeg" alt="Hero Background" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-black/40"></div> <!-- Dark overlay -->
+    <div class="absolute inset-0"></div> <!-- Dark overlay -->
   </div>
 </section>
 
@@ -30,37 +30,44 @@
     <div class="grid md:grid-cols-3 gap-10 text-left">
 
       <!-- Card 1 -->
-      <div class="p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition duration-300">
-        <div class="flex items-center mb-4">
-          <span class="material-symbols-outlined text-cyan-500 text-4xl mr-3">menu_book</span>
-          <h3 class="text-xl font-semibold text-gray-800">Study Material</h3>
+      <a href="/previous-year-question-paper" class="block">
+        <div class="p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-symbols-outlined text-cyan-500 text-4xl mr-3">menu_book</span>
+            <h3 class="text-xl font-semibold text-gray-800">Study Material</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Access high-quality notes, examples, and resources that make learning simple and effective for every
+            student.
+          </p>
         </div>
-        <p class="text-gray-600 leading-relaxed">
-          Access high-quality notes, examples, and resources that make learning simple and effective for every student.
-        </p>
-      </div>
+      </a>
 
       <!-- Card 2 -->
-      <div class="p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition duration-300">
-        <div class="flex items-center mb-4">
-          <span class="material-symbols-outlined text-cyan-500 text-4xl mr-3">quiz</span>
-          <h3 class="text-xl font-semibold text-gray-800">Online Tests</h3>
+      <a href="/online-test" class="block">
+        <div class="p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-symbols-outlined text-cyan-500 text-4xl mr-3">quiz</span>
+            <h3 class="text-xl font-semibold text-gray-800">Online Tests</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Take self-assessment quizzes to track your progress and improve your learning step by step.
+          </p>
         </div>
-        <p class="text-gray-600 leading-relaxed">
-          Take self-assessment quizzes to track your progress and improve your learning step by step.
-        </p>
-      </div>
+      </a>
 
       <!-- Card 3 -->
-      <div class="p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition duration-300">
-        <div class="flex items-center mb-4">
-          <span class="material-symbols-outlined text-cyan-500 text-4xl mr-3">play_circle</span>
-          <h3 class="text-xl font-semibold text-gray-800">Video Tutorials</h3>
+      <a href="/video-tutorials" class="block">
+        <div class="p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
+          <div class="flex items-center mb-4">
+            <span class="material-symbols-outlined text-cyan-500 text-4xl mr-3">play_circle</span>
+            <h3 class="text-xl font-semibold text-gray-800">Video Tutorials</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            Learn practically with engaging tutorials in website development, robotics, and more.
+          </p>
         </div>
-        <p class="text-gray-600 leading-relaxed">
-          Learn practically with engaging tutorials in website development, robotics, and more.
-        </p>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -237,9 +244,9 @@
         </div>
         <h3 class="text-xl font-semibold text-gray-800 mb-3">Reference Guides</h3>
         <p class="text-gray-600 mb-6">Detailed guides for quick revision and exam prep.</p>
-        <a href="#guides" class="inline-block px-5 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition">
-          Get Guides
-        </a>
+        <span class="inline-block px-5 py-2 bg-gray-300 text-gray-600 rounded-lg cursor-not-allowed">
+          Coming Soon
+        </span>
       </div>
 
     </div>
