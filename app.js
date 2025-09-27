@@ -105,18 +105,30 @@ app.get('/signup', (req, res) => {
   res.render('users/signup', { title: 'Sign Up' });
 });
 
+// Dashboard Page
 app.get('/dashboard', (req, res) => {
-  res.render('users/dashboard', { title: 'Dashboard', layout: false }); // layout: false disables express-ejs-layouts
+  res.render('users/dashboard', { 
+    title: 'Dashboard',
+    layout: 'users/dashlayout' // Use your dashlayout for consistent layout
+  });
 });
 
-// User Profile and Settings Pages
+// User Profile Page
 app.get('/profile', (req, res) => {
-  res.render('users/profile', { title: 'Profile' });
+  res.render('users/profile', { 
+    title: 'Profile',
+    layout: 'users/dashlayout' // Use same dashlayout for consistency
+  });
 });
 
+// Settings Page
 app.get('/settings', (req, res) => {
-  res.render('users/settings', { title: 'Settings' });
+  res.render('users/settings', { 
+    title: 'Settings',
+    layout: 'users/dashlayout' // Use same dashlayout for consistency
+  });
 });
+
 
 
 // Start server

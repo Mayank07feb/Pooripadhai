@@ -11,7 +11,7 @@
     <nav class="flex items-center justify-between h-16 lg:h-20 relative">
 
       <!-- Logo -->
-      <a href="/" class="flex items-center">
+      <a href="/" class="block lg:hidden">
         <div
           class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
           <img src="/assets/img/logo.png" alt="Logo" class="w-full h-full object-contain rounded-xl" />
@@ -20,36 +20,49 @@
 
 
       <!-- Desktop Menu -->
-      <div class="hidden lg:flex items-center space-x-1">
-        <ul class="flex items-center space-x-1 font-inter font-medium text-[15px] text-gray-700">
-          <li>
-            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
-              href="/">
-              Home
-              <div
-                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
-              </div>
-            </a>
-          </li>
-          <li>
-            <!-- <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
-              href="/courses">
-              Courses
-              <div
-                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
-              </div>
-            </a> -->
-          </li>
-          <li>
-            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
-              href="/online-tools">
-              Online Tools
-              <div
-                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
-              </div>
-            </a>
-          </li>
-          <ul class="flex flex-wrap gap-8">
+      <div class="hidden lg:flex items-center justify-between w-full px-8">
+
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0">
+          <a href="/" class="flex items-center">
+            <div
+              class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
+              <img src="/assets/img/logo.png" alt="Logo" class="w-full h-full object-contain rounded-xl" />
+            </div>
+          </a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="flex-grow flex justify-center">
+          <ul class="flex items-center space-x-1 font-inter font-medium text-[15px] text-gray-700">
+            <li>
+              <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+                href="/">
+                Home
+                <div
+                  class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+                </div>
+              </a>
+            </li>
+            <li>
+              <!-- <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+        href="/courses">
+        Courses
+        <div
+          class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+        </div>
+      </a> -->
+            </li>
+            <li>
+              <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+                href="/online-tools">
+                Online Tools
+                <div
+                  class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+                </div>
+              </a>
+            </li>
+
             <!-- Online Test -->
             <li class="relative group">
               <a
@@ -63,7 +76,7 @@
 
               <!-- Mega Menu Dropdown -->
               <div
-                class="absolute left-1/2 top-full mt-2 w-screen max-w-6xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform -translate-x-1/2 translate-y-4 group-hover:translate-y-0 transition-all duration-300 z-50">
+                class="fixed left-1/2 top-[80px] w-screen max-w-6xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform -translate-x-1/2 translate-y-4 group-hover:translate-y-0 transition-all duration-300 z-50">
                 <div class="p-8">
 
                   <!-- Grid for 4 columns -->
@@ -173,7 +186,8 @@
 
                     <!-- Column 4: Python Programming -->
                     <div>
-                      <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b-2 border-primary font-inter">Python
+                      <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b-2 border-primary font-inter">
+                        Python
                         Programming</h3>
                       <div class="space-y-2">
                         <a href="#"
@@ -246,161 +260,162 @@
               </div>
 
             </li>
+
+            <li class="relative group">
+              <a
+                class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 cursor-pointer">
+                Study Material
+                <svg class="w-4 h-4 ml-2 transform group-hover:rotate-180 transition-transform duration-200" fill="none"
+                  stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+
+              <!-- Mega Menu Dropdown -->
+              <div
+                class="fixed left-1/2 top-[80px] w-screen max-w-6xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform -translate-x-1/2 translate-y-4 group-hover:translate-y-0 transition-all duration-300 z-50">
+
+                <div class="p-8">
+
+                  <!-- Grid for 3 columns -->
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Column 1: AKTU Section -->
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900 font-inter mb-4 pb-2 border-b-2 border-primary">
+                        Previous Year Question Papers
+                      </h3>
+                      <ul class="space-y-2">
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Pharm</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            MBA</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            MCA</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            MAM</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            BFAD</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            BHMCT</a></li>
+                        <li>
+                          <a href="/previous-year-question-paper"
+                            class="block w-full text-center px-4 py-2 mt-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-600 transition">
+                            Previous Year Question Papers
+                          </a>
+                        </li>
+
+                      </ul>
+
+                    </div>
+
+                    <!-- Column 2: B.Tech Section -->
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900 font-inter mb-4 pb-2 border-b-2 border-primary">
+                        Previous Year Question Papers
+                      </h3>
+                      <ul class="space-y-2">
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-1st Year</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-Common Paper</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-CE</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-CS</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-CH</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-EC</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-EE</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-IT</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
+                            B.Tech-ME</a></li>
+                      </ul>
+                    </div>
+
+                    <!-- Column 3: School Section -->
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900 font-inter mb-4 pb-2 border-b-2 border-primary">
+                        Previous Year Question Papers
+                      </h3>
+                      <ul class="space-y-2">
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">CBSE
+                            Class 10th</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">CBSE
+                            Class 12th</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">ICSE
+                            Class 10th</a></li>
+                        <li><a href="#"
+                            class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">ISC
+                            Class 12th</a></li>
+                      </ul>
+                    </div>
+
+                  </div>
+
+                  <!-- Bottom CTA -->
+                  <div class="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
+                    <div>
+                      <h4 class="font-semibold text-gray-900 text-sm">Can't find what you're looking for?</h4>
+                      <p class="text-gray-600 text-xs mt-1">Request specific papers and we'll add them within 24 hours
+                      </p>
+                    </div>
+                    <a href="/request-papers"
+                      class="px-6 py-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-sm font-semibold rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-200 shadow-md hover:shadow-lg">
+                      Request Papers
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+            </li>
+
+            <li>
+              <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+                href="/contest">
+                Contest
+                <div
+                  class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
+                href="/blog">
+                Blog
+                <div
+                  class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
+                </div>
+              </a>
+            </li>
           </ul>
 
-          <li class="relative group">
-            <a
-              class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 cursor-pointer">
-              Study Material
-              <svg class="w-4 h-4 ml-2 transform group-hover:rotate-180 transition-transform duration-200" fill="none"
-                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
-
-            <!-- Mega Menu Dropdown -->
-            <div
-              class="absolute left-1/2 top-full mt-2 w-screen max-w-6xl bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform -translate-x-1/2 translate-y-4 group-hover:translate-y-0 transition-all duration-300 z-50">
-
-              <div class="p-8">
-
-                <!-- Grid for 3 columns -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                  <!-- Column 1: AKTU Section -->
-                  <div>
-                    <h3 class="text-lg font-bold text-gray-900 font-inter mb-4 pb-2 border-b-2 border-primary">
-                      Previous Year Question Papers
-                    </h3>
-                    <ul class="space-y-2">
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Pharm</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          MBA</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          MCA</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          MAM</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          BFAD</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          BHMCT</a></li>
-                      <li>
-                        <a href="/previous-year-question-paper"
-                          class="block w-full text-center px-4 py-2 mt-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-600 transition">
-                          Previous Year Question Papers
-                        </a>
-                      </li>
-
-                    </ul>
-
-                  </div>
-
-                  <!-- Column 2: B.Tech Section -->
-                  <div>
-                    <h3 class="text-lg font-bold text-gray-900 font-inter mb-4 pb-2 border-b-2 border-primary">
-                      Previous Year Question Papers
-                    </h3>
-                    <ul class="space-y-2">
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-1st Year</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-Common Paper</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-CE</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-CS</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-CH</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-EC</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-EE</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-IT</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">AKTU
-                          B.Tech-ME</a></li>
-                    </ul>
-                  </div>
-
-                  <!-- Column 3: School Section -->
-                  <div>
-                    <h3 class="text-lg font-bold text-gray-900 font-inter mb-4 pb-2 border-b-2 border-primary">
-                      Previous Year Question Papers
-                    </h3>
-                    <ul class="space-y-2">
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">CBSE
-                          Class 10th</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">CBSE
-                          Class 12th</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">ICSE
-                          Class 10th</a></li>
-                      <li><a href="#"
-                          class="block px-3 py-2 text-gray-700 hover:text-primary rounded-lg text-sm font-medium">ISC
-                          Class 12th</a></li>
-                    </ul>
-                  </div>
-
-                </div>
-
-                <!-- Bottom CTA -->
-                <div class="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
-                  <div>
-                    <h4 class="font-semibold text-gray-900 text-sm">Can't find what you're looking for?</h4>
-                    <p class="text-gray-600 text-xs mt-1">Request specific papers and we'll add them within 24 hours</p>
-                  </div>
-                  <a href="/request-papers"
-                    class="px-6 py-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-sm font-semibold rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-200 shadow-md hover:shadow-lg">
-                    Request Papers
-                  </a>
-                </div>
-
-              </div>
-            </div>
-
-
-          </li>
-
-          <li>
-            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
-              href="/contest">
-              Contest
-              <div
-                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-primary-600 transition-all duration-200 relative group"
-              href="/blog">
-              Blog
-              <div
-                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full group-hover:left-0">
-              </div>
-            </a>
-          </li>
-        </ul>
+        </div>
 
         <!-- Desktop Right Section: Sign In / Sign Up -->
-        <div class="hidden lg:flex items-center space-x-3 ml-6">
+        <div class="flex items-center space-x-3">
           <a href="/signin"
             class="px-5 py-2 text-sm font-semibold text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 transition">
             Sign In
@@ -412,7 +427,6 @@
         </div>
 
       </div>
-
 
       <!-- Mobile Menu -->
       <div
@@ -711,7 +725,6 @@
 
 
       </div>
-
 
       <!-- Right Section -->
       <div class="flex items-center space-x-4">
