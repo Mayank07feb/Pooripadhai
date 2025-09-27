@@ -1,44 +1,12 @@
-<!-- Hero Section with Blurred Background -->
+<!-- Hero Section with Background -->
 <section class="relative h-screen w-full overflow-hidden">
-
-  <!-- Background Image with Blur -->
+  <!-- Background Image -->
   <div class="absolute inset-0">
-    <img src="/assets/img/hero-page.jpeg" alt="Hero Background" class="w-full h-full object-cover filter blur-sm">
+    <img src="/assets/img/hero-page.jpeg" alt="Hero Background" class="w-full h-full object-cover">
     <div class="absolute inset-0 bg-black/40"></div> <!-- Dark overlay -->
   </div>
-
-  <!-- Hero Content -->
-  <div class="relative z-20 flex flex-col justify-center items-center px-6 md:px-20 h-full text-center">
-
-    <!-- Centered Content -->
-    <div class="max-w-4xl"> <!-- Increased width -->
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight font-montserrat">
-        Learn <span class="text-cyan-400">Anything</span>, Anytime
-      </h1>
-      <p class="text-lg md:text-xl text-gray-200 mb-6">
-        Join thousands of learners and boost your skills with our curated courses and contests. Expand your knowledge with structured lessons, interactive exercises, and engaging contests tailored for every skill level.
-      </p>
-
-      <!-- Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#courses" class="group inline-flex items-center px-6 py-3 bg-cyan-500 text-white rounded-lg shadow-lg 
-          hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold">
-          Explore Courses
-          <span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1">
-            arrow_forward
-          </span>
-        </a>
-
-        <a href="#contests"
-          class="px-6 py-3 border-2 border-white/30 text-white rounded-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 font-semibold">
-          Join Contests
-        </a>
-      </div>
-    </div>
-
-  </div>
-
 </section>
+
 
 <!-- About Section -->
 <section id="about" class="relative py-20 bg-gradient-to-b from-white to-gray-50">
@@ -54,7 +22,7 @@
 
     <!-- Intro Paragraph -->
     <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-16">
-      <strong>Poori Padhai</strong> is a free medium to connect students with education in an interactive way. 
+      <strong>Poori Padhai</strong> is a free medium to connect students with education in an interactive way.
       Our mission is to make learning simple, engaging, and practical for every student.
     </p>
 
@@ -98,186 +66,13 @@
   </div>
 </section>
 
-
-<!-- Courses Section -->
-<section id="courses" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Section Title -->
-    <div class="text-center mb-16">
-      <h2 class="text-h2 md:text-5xl font-montserrat font-bold text-secondary mb-4">
-        Popular Courses
-      </h2>
-      <p class="text-base text-gray-600 max-w-2xl mx-auto">
-        Master in-demand skills with our comprehensive course catalog
-      </p>
-    </div>
-
-    <!-- Course Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Web Development -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">computer</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Web Development</h4>
-        <p class="text-base text-gray-600 mb-6">Build modern responsive websites using HTML, CSS, JS, and frameworks
-          like React</p>
-        <div class="flex items-center justify-between">
-          <span class="text-sm text-primary font-semibold">120+ Students</span>
-          <div class="flex text-yellow-400">★★★★★ <span class="text-gray-500 ml-1">(4.9)</span></div>
-        </div>
-      </div>
-
-      <!-- Computer Courses -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">code</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Computer Courses</h4>
-        <p class="text-base text-gray-600 mb-6">Learn Programming, Operating Systems, DBMS, and computer science
-          fundamentals</p>
-        <div class="flex items-center justify-between">
-          <span class="text-sm text-primary font-semibold">95+ Students</span>
-          <div class="flex text-yellow-400">★★★★★ <span class="text-gray-500 ml-1">(4.8)</span></div>
-        </div>
-      </div>
-
-      <!-- Science & Engineering (Coming Soon) -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
-        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full">
-          COMING SOON</div>
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">science</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Science & Engineering</h4>
-        <p class="text-base text-gray-600 mb-6">Advanced courses in physics, chemistry, and engineering principles</p>
-        <div class="flex items-center justify-between opacity-60">
-          <span class="text-sm text-gray-600 font-semibold">Pre-registration</span>
-          <div class="flex text-gray-400">★★★★★ <span class="ml-1">(New)</span></div>
-        </div>
-      </div>
-
-      <!-- Competition Exam (Coming Soon) -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
-        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full">
-          COMING SOON</div>
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">emoji_events</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Competition Exam</h4>
-        <p class="text-base text-gray-600 mb-6">Prepare for competitive examinations and government job tests</p>
-        <div class="flex items-center justify-between opacity-60">
-          <span class="text-sm text-gray-600 font-semibold">Pre-registration</span>
-          <div class="flex text-gray-400">★★★★★ <span class="ml-1">(New)</span></div>
-        </div>
-      </div>
-
-      <!-- Art & Commerce (Coming Soon) -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
-        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full">
-          COMING SOON</div>
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">palette</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Art & Commerce</h4>
-        <p class="text-base text-gray-600 mb-6">Creative arts, business studies, and commerce-related subjects</p>
-        <div class="flex items-center justify-between opacity-60">
-          <span class="text-sm text-gray-600 font-semibold">Pre-registration</span>
-          <div class="flex text-gray-400">★★★★★ <span class="ml-1">(New)</span></div>
-        </div>
-      </div>
-
-      <!-- Data Science (Coming Soon) -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
-        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full">
-          COMING SOON</div>
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">psychology</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Data Science</h4>
-        <p class="text-base text-gray-600 mb-6">Analyze data and learn Machine Learning fundamentals with Python</p>
-        <div class="flex items-center justify-between opacity-60">
-          <span class="text-sm text-gray-600 font-semibold">Pre-registration</span>
-          <div class="flex text-gray-400">★★★★★ <span class="ml-1">(New)</span></div>
-        </div>
-      </div>
-
-      <!-- Artificial Intelligence (Coming Soon) -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
-        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full">
-          COMING SOON</div>
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">smart_toy</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Artificial Intelligence</h4>
-        <p class="text-base text-gray-600 mb-6">Explore AI concepts, neural networks, and deep learning applications</p>
-        <div class="flex items-center justify-between opacity-60">
-          <span class="text-sm text-gray-600 font-semibold">Pre-registration</span>
-          <div class="flex text-gray-400">★★★★★ <span class="ml-1">(New)</span></div>
-        </div>
-      </div>
-
-      <!-- Languages (Coming Soon) -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
-        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full">
-          COMING SOON</div>
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">language</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Languages</h4>
-        <p class="text-base text-gray-600 mb-6">Learn English, Spanish, French, and more with interactive lessons</p>
-        <div class="flex items-center justify-between opacity-60">
-          <span class="text-sm text-gray-600 font-semibold">Pre-registration</span>
-          <div class="flex text-gray-400">★★★★★ <span class="ml-1">(New)</span></div>
-        </div>
-      </div>
-
-      <!-- Finance & Accounting (Coming Soon) -->
-      <div
-        class="group p-8 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative">
-        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full">
-          COMING SOON</div>
-        <div
-          class="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-3xl text-white">attach_money</span>
-        </div>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">Finance & Accounting</h4>
-        <p class="text-base text-gray-600 mb-6">Master finance, accounting principles, and investment strategies</p>
-        <div class="flex items-center justify-between opacity-60">
-          <span class="text-sm text-gray-600 font-semibold">Pre-registration</span>
-          <div class="flex text-gray-400">★★★★★ <span class="ml-1">(New)</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
 <!-- Test Topics Section -->
 <section class="py-20 bg-gray-50">
   <div class="max-w-6xl mx-auto px-6">
     <!-- Section Title -->
     <div class="text-center mb-16">
       <h2 class="text-h2 md:text-5xl font-montserrat font-bold text-secondary mb-4">
-        Test Topics
+        Online Test
       </h2>
       <p class="text-base text-gray-600 max-w-2xl mx-auto">
         Practice with hands-on tests and assessments
@@ -288,13 +83,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <!-- Daily Free Current Affairs -->
-      <div
+      <!-- <div
         class="p-6 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         <span class="material-symbols-outlined text-4xl text-primary mb-4 block">event_note</span>
         <h4 class="text-h4 font-montserrat font-semibold mb-2 text-secondary">Daily Free Current Affairs</h4>
         <p class="text-base text-gray-600 mb-3">Stay updated with the latest current affairs and news daily</p>
         <div class="text-sm text-primary font-semibold">Updated Daily</div>
-      </div>
+      </div> -->
 
       <!-- C Language Test -->
       <div
@@ -388,6 +183,13 @@
 
     </div>
   </div>
+
+  <div class="text-center mt-12">
+    <a href="/online-test"
+      class="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-md hover:bg-primary-dark transition duration-300">
+      View All Tests
+    </a>
+  </div>
 </section>
 
 <!-- Study Material Section -->
@@ -403,19 +205,6 @@
 
     <!-- Study Material Grid -->
     <div class="grid gap-10 md:grid-cols-3">
-      
-      <!-- Notes Card -->
-      <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
-        <div class="text-cyan-500 mb-4">
-          <span class="material-symbols-outlined text-5xl">description</span>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-3">Notes</h3>
-        <p class="text-gray-600 mb-6">Well-structured notes covering all important topics.</p>
-        <a href="#notes" 
-           class="inline-block px-5 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition">
-          Explore Notes
-        </a>
-      </div>
 
       <!-- Previous Year Papers Card -->
       <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
@@ -424,10 +213,21 @@
         </div>
         <h3 class="text-xl font-semibold text-gray-800 mb-3">Previous Year Papers</h3>
         <p class="text-gray-600 mb-6">Practice with solved and unsolved past question papers.</p>
-        <a href="#papers" 
-           class="inline-block px-5 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition">
+        <a href="#papers" class="inline-block px-5 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition">
           View Papers
         </a>
+      </div>
+
+      <!-- Notes Card -->
+      <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
+        <div class="text-cyan-500 mb-4">
+          <span class="material-symbols-outlined text-5xl">description</span>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">Notes</h3>
+        <p class="text-gray-600 mb-6">Well-structured notes covering all important topics.</p>
+        <span class="inline-block px-5 py-2 bg-gray-300 text-gray-600 rounded-lg cursor-not-allowed">
+          Coming Soon
+        </span>
       </div>
 
       <!-- Reference Guides Card -->
@@ -437,8 +237,7 @@
         </div>
         <h3 class="text-xl font-semibold text-gray-800 mb-3">Reference Guides</h3>
         <p class="text-gray-600 mb-6">Detailed guides for quick revision and exam prep.</p>
-        <a href="#guides" 
-           class="inline-block px-5 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition">
+        <a href="#guides" class="inline-block px-5 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition">
           Get Guides
         </a>
       </div>
@@ -600,7 +399,6 @@
   </div>
 </section>
 
-
 <!-- Testimonials Section -->
 <section class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-6">
@@ -675,73 +473,6 @@
   </div>
 </section>
 
-
-<!-- Latest Updates Section -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Section Title -->
-    <div class="text-center mb-16">
-      <h2 class="text-h2 md:text-5xl font-montserrat font-bold text-secondary mb-4">
-        Latest Updates
-      </h2>
-      <p class="text-base text-gray-600">
-        Stay informed about new courses and features
-      </p>
-    </div>
-
-    <!-- Updates Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      <!-- Update 1 -->
-      <div
-        class="p-8 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <span class="material-symbols-outlined text-5xl text-primary mb-4 block">new_releases</span>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">
-          New C++ Course Released
-        </h4>
-        <p class="text-base text-gray-600 mb-4">
-          Learn advanced C++ concepts with practical examples and real-world projects
-        </p>
-        <a href="#" class="text-primary font-semibold hover:text-primary-hover transition-colors">
-          Read More →
-        </a>
-      </div>
-
-      <!-- Update 2 -->
-      <div
-        class="p-8 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <span class="material-symbols-outlined text-5xl text-primary mb-4 block">emoji_events</span>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">
-          Upcoming Python Contest
-        </h4>
-        <p class="text-base text-gray-600 mb-4">
-          Test your Python skills in our monthly coding challenge and win exciting rewards
-        </p>
-        <a href="#" class="text-primary font-semibold hover:text-primary-hover transition-colors">
-          Read More →
-        </a>
-      </div>
-
-      <!-- Update 3 -->
-      <div
-        class="p-8 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <span class="material-symbols-outlined text-5xl text-primary mb-4 block">quiz</span>
-        <h4 class="text-h4 font-montserrat font-bold mb-3 text-secondary">
-          Daily Quiz Challenge
-        </h4>
-        <p class="text-base text-gray-600 mb-4">
-          Participate in our daily quizzes across various subjects and track your progress
-        </p>
-        <a href="#" class="text-primary font-semibold hover:text-primary-hover transition-colors">
-          Read More →
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
 <!-- Statistics Section -->
 <section class="py-20 bg-gradient-to-r from-primary to-cyan-500 text-white">
   <div class="max-w-6xl mx-auto px-6 text-center">
@@ -754,109 +485,64 @@
     <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
       <!-- Students -->
       <div class="group">
-        <span class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
+        <span
+          class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
           groups
         </span>
         <h3 class="text-2xl md:text-3xl font-montserrat font-black mb-1">
-          50K+
+          18K+
         </h3>
         <p class="text-sm text-white/90">Connected Students</p>
       </div>
 
-      <!-- Courses -->
+      <!-- Online Test -->
       <div class="group">
-        <span class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
+        <span
+          class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
           menu_book
         </span>
         <h3 class="text-2xl md:text-3xl font-montserrat font-black mb-1">
           120+
         </h3>
-        <p class="text-sm text-white/90">Courses Available</p>
+        <p class="text-sm text-white/90">Online Test</p>
       </div>
 
       <!-- Contests -->
       <div class="group">
-        <span class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
+        <span
+          class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
           emoji_events
         </span>
         <h3 class="text-2xl md:text-3xl font-montserrat font-black mb-1">
-          300+
+          2+
         </h3>
         <p class="text-sm text-white/90">Contests Hosted</p>
       </div>
 
       <!-- Previous Year Papers -->
       <div class="group">
-        <span class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
+        <span
+          class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
           description
         </span>
         <h3 class="text-2xl md:text-3xl font-montserrat font-black mb-1">
-          5K+
+          2K+
         </h3>
         <p class="text-sm text-white/90">Previous Year Papers</p>
       </div>
 
       <!-- Certificates -->
       <div class="group">
-        <span class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
+        <span
+          class="material-symbols-outlined text-5xl mb-3 block group-hover:scale-110 transition-transform duration-300">
           verified
         </span>
         <h3 class="text-2xl md:text-3xl font-montserrat font-black mb-1">
-          10K+
+          140+
         </h3>
         <p class="text-sm text-white/90">Certificates Issued</p>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- Partners Section -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <!-- Section Title -->
-    <h2 class="text-h2 md:text-5xl font-montserrat font-bold text-secondary mb-12">
-      Our Partners
-    </h2>
-
-    <!-- Partners Grid -->
-    <div
-      class="flex flex-wrap justify-center items-center gap-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-      <div class="h-16 w-32 bg-gray-200 rounded-lg flex items-center justify-center">
-        <span class="text-base text-gray-500 font-montserrat font-bold">Partner 1</span>
-      </div>
-      <div class="h-16 w-32 bg-gray-200 rounded-lg flex items-center justify-center">
-        <span class="text-base text-gray-500 font-montserrat font-bold">Partner 2</span>
-      </div>
-      <div class="h-16 w-32 bg-gray-200 rounded-lg flex items-center justify-center">
-        <span class="text-base text-gray-500 font-montserrat font-bold">Partner 3</span>
-      </div>
-      <div class="h-16 w-32 bg-gray-200 rounded-lg flex items-center justify-center">
-        <span class="text-base text-gray-500 font-montserrat font-bold">Partner 4</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Call to Action -->
-<section class="py-20 bg-gradient-to-r from-primary to-cyan-500 text-white">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <!-- Heading -->
-    <h2 class="text-h2 md:text-5xl font-montserrat font-black mb-6">
-      Ready to Start Learning?
-    </h2>
-
-    <!-- Paragraph -->
-    <p class="text-base md:text-xl mb-8 text-white/90">
-      Join thousands of learners and take your skills to the next level
-    </p>
-
-    <!-- Button -->
-    <a href="#courses"
-      class="inline-block px-10 py-4 bg-white text-primary rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-montserrat font-bold text-base md:text-lg">
-      Get Started Now
-    </a>
   </div>
 </section>
 
@@ -875,18 +561,6 @@
 
     <!-- FAQ Items -->
     <div class="space-y-6 max-w-4xl mx-auto">
-      <details
-        class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-        <summary
-          class="font-montserrat font-bold text-base md:text-lg cursor-pointer text-secondary hover:text-primary transition-colors">
-          How do I enroll in a course?
-        </summary>
-        <p class="mt-4 text-base md:text-lg text-gray-600 leading-relaxed">
-          Simply click on "Explore Courses" from the hero section, browse through our available courses, select your
-          desired course, and follow the straightforward enrollment process. You'll have instant access to all course
-          materials.
-        </p>
-      </details>
 
       <details
         class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
@@ -895,8 +569,8 @@
           Are the contests free to participate?
         </summary>
         <p class="mt-4 text-base md:text-lg text-gray-600 leading-relaxed">
-          Yes, most of our contests are completely free to participate in. Some premium contests may have a small entry
-          fee, but we clearly indicate this beforehand. Free contests offer great prizes and learning opportunities.
+          Yes, most of our contests are completely free to enter.
+          These free contests provide exciting prizes and valuable learning opportunities.
         </p>
       </details>
 
@@ -925,4 +599,5 @@
       </details>
     </div>
   </div>
+
 </section>
