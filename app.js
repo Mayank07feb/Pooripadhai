@@ -63,6 +63,10 @@ app.get('/contact', (req, res) => res.render('contact', { title: 'Contact' }));
 app.get('/privacy', (req, res) => res.render('privacy', { title: 'Privacy Policy' }));
 app.get('/terms', (req, res) => res.render('terms', { title: 'Terms & Conditions' }));
 
+// Review Page
+app.get('/review', (req, res) => {
+  res.render('review', { title: 'Review' });
+});
 
 app.get('/previous-year-question-paper', (req, res) => {
   res.render('previous-year-question-paper', { title: 'Previous Year Question Papers' });
@@ -128,7 +132,6 @@ app.get('/settings', (req, res) => {
     layout: 'users/dashlayout' // Use same dashlayout for consistency
   });
 });
-
 
 
 // Start server
