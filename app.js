@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
+const seoData = require('./seoData'); // import centralized meta data
 
 const app = express();
 const PORT = 3000;
@@ -9,130 +10,86 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(expressLayouts);
-app.set('layout', 'layout'); // default layout (views/layout.ejs)
+app.set('layout', 'layout'); // default layout
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
+// ---------------------
 // Routes
-app.get('/', (req, res) => res.render('index', { title: 'Home' }));
+// ---------------------
 
-app.get('/courses', (req, res) => res.render('courses', { title: 'Courses' }));
+// Home
+app.get('/', (req, res) => res.render('index', seoData.home));
 
-// Computer Courses main page
-app.get('/computer-courses', (req, res) => {
-  res.render('computer-courses', { title: 'Computer Courses' });
-});
+// Courses
+app.get('/courses', (req, res) => res.render('courses', seoData.courses));
+app.get('/computer-courses', (req, res) => res.render('computer-courses', seoData.computer_courses));
+app.get('/computer-courses/html-tutorial', (req, res) =>
+  res.render('html-tutorial', { ...seoData.html_tutorial, layout: 'layout-sidebar' })
+);
 
-// Computer Courses - HTML Tutorial
-app.get('/computer-courses/html-tutorial', (req, res) => {
-  res.render('html-tutorial', {
-    title: 'HTML Tutorial',
-    layout: 'layout-sidebar' // sidebar + new layout
+// Online Tools
+app.get('/online-tools', (req, res) => res.render('online-tools', seoData.online_tools));
+app.get('/online-tools/html-css-js-compiler', (req, res) => res.render('compiler', seoData.compiler));
+app.get('/online-tools/convert-case', (req, res) => res.render('convert-case', seoData.convert_case));
+
+// Contests
+app.get('/contest', (req, res) => res.render('contest', seoData.contest));
+app.get('/contest/dom-cruiser', (req, res) => res.render('dom-cruiser', seoData.dom_cruiser));
+
+// Blog & Info
+app.get('/blog', (req, res) => res.render('blog', seoData.blog));
+app.get('/about', (req, res) => res.render('about', seoData.about));
+app.get('/contact', (req, res) => res.render('contact', seoData.contact));
+
+// Policies
+app.get('/privacy', (req, res) => res.render('privacy', seoData.privacy));
+app.get('/terms', (req, res) => res.render('terms', seoData.terms));
+app.get('/review', (req, res) => res.render('review', seoData.review));
+
+// Previous Year Question Papers
+app.get('/previous-year-question-paper', (req, res) =>
+  res.render('previous-year-question-paper', seoData.pyq)
+);
+app.get('/previous-year-question-paper/universities/aktu/b-tech', (req, res) =>
+  res.render('question-paper', seoData.pyq_aktu)
+);
+
+// Online Tests
+app.get('/online-test', (req, res) => res.render('online-test', seoData.online_test));
+app.get('/online-test/subjects/c', (req, res) => res.render('c-online-test', seoData.online_test_c));
+app.get('/online-test/php/basics', (req, res) => res.render('php-basics', seoData.php_basics));
+app.get('/online-test/php/basics/test', (req, res) => res.render('php-basics-test', seoData.php_basics_test));
+
+// Daily Quiz
+app.get('/daily-quiz/current-affairs', (req, res) =>
+  res.render('daily-quiz-current-affairs', seoData.daily_quiz)
+);
+
+// User Auth
+app.get('/signin', (req, res) => res.render('users/signin', seoData.signin));
+app.get('/signup', (req, res) => res.render('users/signup', seoData.signup));
+
+// User Dashboard
+app.get('/dashboard', (req, res) =>
+  res.render('users/dashboard', { ...seoData.dashboard, layout: 'users/dashlayout' })
+);
+app.get('/profile', (req, res) =>
+  res.render('users/profile', { ...seoData.profile, layout: 'users/dashlayout' })
+);
+app.get('/settings', (req, res) =>
+  res.render('users/settings', { ...seoData.settings, layout: 'users/dashlayout' })
+);
+
+// 404 fallback
+app.use((req, res) => {
+  res.status(404).render('404', {
+    meta_title: 'Page Not Found',
+    meta_description: 'Oops! The page you are looking for does not exist.'
   });
 });
-
-// Online Tools Page
-app.get('/online-tools', (req, res) => {
-  res.render('online-tools', { title: 'Online Tools' });
-});
-
-// HTML, CSS, JS Compiler Page
-app.get('/online-tool/html-css-js-compiler', (req, res) => {
-  res.render('compiler', { title: 'HTML, CSS, JS Compiler' });
-});
-
-// Convert Case Page
-app.get('/online-tool/convert-case', (req, res) => {
-  res.render('convert-case', { title: 'Convert Text Case' });
-});
-
-app.get('/contest', (req, res) => res.render('contest', { title: 'Contest' }));
-
-app.get('/contest/dom-cruiser', (req, res) => {
-  res.render('dom-cruiser', { title: 'DOM Cruiser Contest' });
-});
-
-app.get('/blog', (req, res) => res.render('blog', { title: 'Blog' }));
-
-app.get('/about', (req, res) => res.render('about', { title: 'About' }));
-app.get('/contact', (req, res) => res.render('contact', { title: 'Contact' }));
-
-// **New Routes**
-app.get('/privacy', (req, res) => res.render('privacy', { title: 'Privacy Policy' }));
-app.get('/terms', (req, res) => res.render('terms', { title: 'Terms & Conditions' }));
-
-// Review Page
-app.get('/review', (req, res) => {
-  res.render('review', { title: 'Review' });
-});
-
-app.get('/previous-year-question-paper', (req, res) => {
-  res.render('previous-year-question-paper', { title: 'Previous Year Question Papers' });
-});
-
-// Previous Year Question Papers - Universities / AKTU / B.Tech
-app.get('/previous-year-question-paper/universities/aktu/b.tech', (req, res) => {
-  res.render('question-paper', { title: 'Previous Year Question Papers - AKTU B.Tech' }); // File: views/previous-year-question-paper-aktu-btech.ejs
-});
-
-app.get('/online-test', (req, res) => {
-  res.render('online-test', { title: 'Online Test' });
-});
-
-app.get('/online-test/subjects/c', (req, res) => {
-  res.render('c-online-test', { title: 'C Language Online Test' });
-});
-
-app.get('/online-test/php/basics', (req, res) => {
-  res.render('php-basics', { title: 'PHP Basics' });
-});
-
-// PHP Basics Online Test Page
-app.get('/online-test/php/basics/test', (req, res) => {
-  res.render('php-basics-test', { title: 'PHP Basics Online Test' }); // File: views/php-basics-test.ejs
-});
-
-// Daily Current Affairs Quiz Page
-app.get('/daily-quiz/current-affairs', (req, res) => {
-  res.render('daily-quiz-current-affairs', { title: 'Daily Current Affairs Quiz' }); // File: views/daily-quiz-current-affairs.ejs
-});
-
-
-// User Authentication Pages
-app.get('/signin', (req, res) => {
-  res.render('users/signin', { title: 'Sign In' });
-});
-
-app.get('/signup', (req, res) => {
-  res.render('users/signup', { title: 'Sign Up' });
-});
-
-// Dashboard Page
-app.get('/dashboard', (req, res) => {
-  res.render('users/dashboard', { 
-    title: 'Dashboard',
-    layout: 'users/dashlayout' // Use your dashlayout for consistent layout
-  });
-});
-
-// User Profile Page
-app.get('/profile', (req, res) => {
-  res.render('users/profile', { 
-    title: 'Profile',
-    layout: 'users/dashlayout' // Use same dashlayout for consistency
-  });
-});
-
-// Settings Page
-app.get('/settings', (req, res) => {
-  res.render('users/settings', { 
-    title: 'Settings',
-    layout: 'users/dashlayout' // Use same dashlayout for consistency
-  });
-});
-
 
 // Start server
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));

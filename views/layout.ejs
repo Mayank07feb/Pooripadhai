@@ -10,14 +10,15 @@
   <link rel="shortcut icon" href="/assets/img/favicon.png">
 
   <title>
-    <%= title %> | Pooripadhai
+    <%= meta_title %> | Pooripadhai
   </title>
-  <meta name="description"
-    content="Pooripadhai offers modern web development, SaaS, and startup solutions using the latest technologies like Laravel, Tailwind, and React.">
+
+  <!-- Dynamic meta description -->
+  <meta name="description" content="<%= meta_description %>">
+
   <meta name="keywords"
     content="Pooripadhai, laravel, tailwind, react, html, css, bootstrap, web development, saas, software, responsive">
   <meta name="author" content="Pooripadhai Team">
-  <meta name="theme-color" content="#0f172a">
 
   <!-- Google Fonts: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,18 +39,17 @@
   <!-- Header -->
   <%- include("partials/header") %>
 
-    <!-- Page Content -->
-    <main class="min-h-screen pt-20">
-      <%- body %>
-    </main>
+  <!-- Page Content -->
+  <main class="min-h-screen pt-20">
+    <%- body %>
+  </main>
 
-    <!-- Footer -->
-    <%- include("partials/footer") %>
+  <!-- Footer -->
+  <%- include("partials/footer") %>
 
-      <!-- Vendor + Template JS -->
-      <!-- <script src="/js/vendor.js"></script>
-      <script src="/js/main.js"></script> -->
+  <!-- Vendor + Template JS -->
+  <!-- <script src="/js/vendor.js"></script>
+  <script src="/js/main.js"></script> -->
 
 </body>
-
 </html>
