@@ -32,8 +32,14 @@ app.get('/computer-courses/html-tutorial', (req, res) =>
 
 // Online Tools
 app.get('/online-tools', (req, res) => res.render('online-tools', seoData.online_tools));
-app.get('/online-tools/html-css-js-compiler', (req, res) => res.render('compiler', seoData.compiler));
-app.get('/online-tools/convert-case', (req, res) => res.render('convert-case', seoData.convert_case));
+// Online Tools
+app.get('/online-tool/html-css-js-compiler', (req, res) =>
+  res.render('compiler', seoData.compiler)
+);
+app.get('/online-tool/convert-case', (req, res) =>
+  res.render('convert-case', seoData.convert_case)
+);
+
 
 // Contests
 app.get('/contest', (req, res) => res.render('contest', seoData.contest));
@@ -53,7 +59,7 @@ app.get('/review', (req, res) => res.render('review', seoData.review));
 app.get('/previous-year-question-paper', (req, res) =>
   res.render('previous-year-question-paper', seoData.pyq)
 );
-app.get('/previous-year-question-paper/universities/aktu/b-tech', (req, res) =>
+app.get('/previous-year-question-paper/universities/aktu/b.tech', (req, res) =>
   res.render('question-paper', seoData.pyq_aktu)
 );
 
